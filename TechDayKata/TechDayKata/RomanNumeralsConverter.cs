@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace TechDayKata;
 
 /// <summary>
@@ -31,11 +33,13 @@ public sealed class RomanNumeralsConverter
     /// <remarks>The Roman numerals do not support 0. For simplicity, 0 is therefore ignored during the kata.</remarks>
     public string ToRomanNumerals(int decimalNumber)
     {
-        return decimalNumber switch
+        var sb = new StringBuilder();
+
+        for (var i = 0; i < decimalNumber; ++i)
         {
-            3 => "III",
-            2 => "II",
-            _ => "I"
-        };
+            sb.Append('I');
+        }
+
+        return sb.ToString();
     }
 }
