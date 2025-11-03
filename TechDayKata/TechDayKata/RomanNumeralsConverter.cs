@@ -31,6 +31,6 @@ public sealed class RomanNumeralsConverter
     /// <remarks>The Roman numerals do not support 0. For simplicity, 0 is therefore ignored during the kata.</remarks>
     public string ToRomanNumerals(int decimalNumber)
     {
-        throw new NotImplementedException();
+        return "I";
     }
 }
