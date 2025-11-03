@@ -33,8 +33,12 @@ public sealed class RomanNumeralsConverter
     /// <remarks>The Roman numerals do not support 0. For simplicity, 0 is therefore ignored during the kata.</remarks>
     public string ToRomanNumerals(int decimalNumber)
     {
-        var sb = new StringBuilder();
+        if (decimalNumber is 4)
+        {
+            return "IV";
+        }
 
+        var sb = new StringBuilder();
         for (var i = 0; i < decimalNumber; ++i)
         {
             sb.Append('I');

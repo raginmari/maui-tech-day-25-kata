@@ -24,4 +24,11 @@ public class Tests
         var sut = new RomanNumeralsConverter();
         Assert.That(sut.ToRomanNumerals(3), Is.EqualTo("III"));
     }
+
+    [Test]
+    public void WhenGivenDecimal_4_ThenReturnsRoman_IV()
+    {
+        var sut = new RomanNumeralsConverter();
+        Assert.That(sut.ToRomanNumerals(4), Is.EqualTo("IV"));
+    }
 }
