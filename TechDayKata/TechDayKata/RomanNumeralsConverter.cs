@@ -24,6 +24,14 @@ namespace TechDayKata;
 /// </summary>
 public sealed class RomanNumeralsConverter
 {
+    // I, V, X, L, C, D, M
+    private static (int, string)[] numerals =
+    [
+        (5, "V"),
+        (4, "IV"),
+        (1, "I"),
+    ];
+
     /// <summary>
     /// Converts the given <param name="decimalNumber" /> to the corresponding Roman numeral.
     /// </summary>
@@ -33,20 +41,16 @@ public sealed class RomanNumeralsConverter
     /// <remarks>The Roman numerals do not support 0. For simplicity, 0 is therefore ignored during the kata.</remarks>
     public string ToRomanNumerals(int decimalNumber)
     {
-        if (decimalNumber is 5)
-        {
-            return "V";
-        }
-
-        if (decimalNumber is 4)
-        {
-            return "IV";
-        }
-
         var sb = new StringBuilder();
-        for (var i = 0; i < decimalNumber; ++i)
+        var rest = decimalNumber;
+        
+        foreach (var (dec, rom) in numerals)
         {
-            sb.Append('I');
+            while (rest >= dec)
+            {
+                sb.Append(rom);
+                rest -= dec;
+            }
         }
 
         return sb.ToString();
