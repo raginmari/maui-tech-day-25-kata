@@ -31,4 +31,11 @@ public class Tests
         var sut = new RomanNumeralsConverter();
         Assert.That(sut.ToRomanNumerals(4), Is.EqualTo("IV"));
     }
+
+    [Test]
+    public void WhenGivenDecimal_5_ThenReturnsRoman_V()
+    {
+        var sut = new RomanNumeralsConverter();
+        Assert.That(sut.ToRomanNumerals(5), Is.EqualTo("V"));
+    }
 }
